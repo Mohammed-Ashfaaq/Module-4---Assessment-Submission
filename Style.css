@@ -1,0 +1,201 @@
+.logo {
+    font-family: sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f33535;     /* Cine — red */
+    background-color: #1a1a1a;  /* dark background */
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.logo span {
+    color: #ffffff;     /* Search — white */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    font-family: sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 15px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;  
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #f33535;
+}
+
+.search-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+}
+
+input[type="text"] {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#year-select{
+    padding: 15px
+}
+
+#search-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #f33535;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#trending-movies, #results {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);  /* 5 equal columns */
+    gap: 15px; 
+    padding: 20px;
+}
+
+.movie-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.movie-card h2 {
+    font-size: 14px;
+    padding: 8px;
+}
+
+.movie-card p {
+    font-size: 12px;
+    padding: 0 8px 8px;
+}
+
+.sign-up {
+    max-width: 100%;
+    margin: 0 auto;     
+    padding: 40px 20px;
+    text-align: left; 
+}    
+#search-input {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.sign-up input[type="text"],
+.sign-up input[type="email"],
+.sign-up input[type="password"],
+.sign-up input[type="number"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+input[type="checkbox"] {
+    display: inline;
+    width: auto;
+    margin-right: 8px;
+    margin-bottom: 15px;
+}
+
+input[type="checkbox"] + label {
+    display: inline;
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+#review-section {
+    max-width: 500px;
+    padding: 40px 20px;
+    text-align: left;
+}
+
+.review-form input[type="text"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.review-label {
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+.review-form textarea {
+    margin-top: 10px;  /* space above textarea */
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.review-submit{
+    margin-top: 10px;
+}
+
+/* Mobile first — base styles for small screens */
+#trending-movies, #results {
+    grid-template-columns: repeat(2, 1fr);  /* 2 columns on mobile */
+}
+
+/* Desktop — larger screens */
+@media (min-width: 768px) {
+    #trending-movies, #results {
+        grid-template-columns: repeat(5, 1fr);  /* 5 columns on desktop */
+    }
+}
+
