@@ -188,8 +188,10 @@ input[type="checkbox"] + label {
 }
 
 /* Mobile first — base styles for small screens */
-#trending-movies, #results {
-    grid-template-columns: repeat(2, 1fr);  /* 2 columns on mobile */
+@media (max-width: 600px) {
+    #trending-movies, #results {
+        grid-template-columns: repeat(2, 1fr);  /* 2 columns on mobile */
+    }
 }
 
 /* Desktop — larger screens */
