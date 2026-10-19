@@ -230,3 +230,10 @@ input[type="checkbox"] + label {
         padding: 20px 15px;
     }
 }
+
+.rating-input{
+    display: block;
+    accent-color: #f33535;
+    cursor: pointer;
+    margin-right: 5px;
+}
