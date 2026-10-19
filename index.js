@@ -189,3 +189,4 @@ event.preventDefault();
     document.getElementById("review-section").classList.remove("hidden");
 }
 
+document.getElementById("terms").required = true
