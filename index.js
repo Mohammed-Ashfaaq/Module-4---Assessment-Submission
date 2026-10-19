@@ -1,3 +1,4 @@
+// Search form event listener
 document.getElementById("search-form").addEventListener("submit", function (event) {
     event.preventDefault();
     const searchTerm = document.getElementById("search-input").value.trim();
@@ -6,6 +7,7 @@ document.getElementById("search-form").addEventListener("submit", function (even
     }
 });
 
+// searchmovies() - fetches films fromm OMDb API
 function searchMovies(searchTerm) {
     const url = `https://www.omdbapi.com/?s=${searchTerm}&apikey=trilogy`;
     fetch(url)
@@ -25,6 +27,7 @@ function searchMovies(searchTerm) {
         })
 }
 
+// addelements() - creates film cards from search results
 function addElements(movies) {
     movies.forEach(movie => {
         const card = document.createElement("div");
@@ -34,12 +37,13 @@ function addElements(movies) {
                 <p>Type: ${movie.Type}</p>
                 <p>Year: ${movie.Year}</p>
                 <img src="${movie.Poster}" alt="${movie.Title} Poster">
-                <button onclick="fetchMovieDetails('${movie.imdbID}')">View Details</button>
+                <button onclick="fetchMovieDetails('${movie.imdbID}' aria-label="View details for ${movie.Title}")">View Details</button>
             `;
             document.getElementById("results").appendChild(card);
         })
     }
 
+// fetchMovieDetails() - fetches full film details by ID
 function fetchMovieDetails(imdbID){
     console.log("fetchMovieDetails called with:", imdbID);
     const url = `https://www.omdbapi.com/?i=${imdbID}&apikey=trilogy`;
@@ -66,7 +70,7 @@ function fetchMovieDetails(imdbID){
                 <p><Strong>Genre:</Strong> ${data.Genre}</p>
                 <p><Strong>Rating:</Strong> ${data.imdbRating}</p>
                 <img src="${data.Poster}" alt="${data.Title} Poster">
-                <button onclick="goBack()">Go Back</button>
+                <button onclick="goBack() aria-label="Go back to search results">Go Back</button>
                 
             `;
         })
@@ -75,22 +79,18 @@ function fetchMovieDetails(imdbID){
             document.getElementById("results").innerHTML = "<p>Something went wrong. Please try again.</p>";
         });
     }
+
+// goBack() - returns to search results
 function goBack() {
-    // Clear movie details
     document.getElementById("movie-details").innerHTML = "";
-    
-    // Show all sections
     document.querySelector(".search-section").style.display = "block";
     document.getElementById("trending-section-container").style.display = "block";
     document.querySelector(".results-section").style.display = "block";
-    
-    // Hide search header
     document.getElementById("search-header").style.display = "none";
-    
-    // Reload trending films
     displayTrendingMovies();
 } 
 
+// displayTrendingMovies() - loads trending films on page load
 function displayTrendingMovies() {
     const movies2024 = ["Dune Part Two", "Deadpool & Wolverine", "Inside Out 2", "Alien Romulus", "Twisters", "Moana 2","Kung Fu Panda 4", "Mufasa: The Lion King", "Sonic The Hedgehog 3"]
     const movies2025 = ["Mickey 17", "Sinners","Thunderbolts", "28 Years Later", "A Minecraft Movie", "Superman", "Zootopia 2", "Wicked: For Good", "Jurassic World: Rebirth"]
@@ -156,6 +156,7 @@ document.getElementById("review-form").addEventListener("submit", function(event
     document.getElementById("review-section").innerHTML = "<h2>Thank you for your review! ⭐</h2><p>Your review has been submitted successfully.</p>";
 });
 
+// showHome() - displays home page sections
 function showHome(event) {
     event.preventDefault();
     document.querySelector(".search-section").style.display = "block";
@@ -169,6 +170,7 @@ function showHome(event) {
     document.getElementById("search-input").value = "";
 }
 
+// showSignup - displays sign up form
 function showSignUp(event) {
     event.preventDefault();
     document.querySelector(".search-section").style.display = "none";
@@ -179,6 +181,7 @@ function showSignUp(event) {
     document.getElementById("review-section").classList.add("hidden");
 }
 
+// showReview - displays review form
 function showReview(event) {
 event.preventDefault();
     document.querySelector(".search-section").style.display = "none";
@@ -189,4 +192,5 @@ event.preventDefault();
     document.getElementById("review-section").classList.remove("hidden");
 }
 
+// validation requirement for terms and conditions checkbox
 document.getElementById("terms").required = true

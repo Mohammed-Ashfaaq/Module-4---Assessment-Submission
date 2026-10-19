@@ -12,9 +12,9 @@
         <div class="logo">Cine<span>Search</span> 🎬</div>
         <nav>
             <ul>
-                <li><a href="#" onclick="showHome(event)">Home</a></li>
-                <li><a href="#" onclick="showReview(event)">Review</a></li>
-                <li><a href="#" onclick="showSignUp(event)">Sign Up</a></li>
+                <li><a href="#" onclick="showHome(event)" aria-label="Go to home page">Home</a></li>
+                <li><a href="#" onclick="showReview(event)" aria-label="Go to review section">Review</a></li>
+                <li><a href="#" onclick="showSignUp(event)" aria-label="Go to sign up">Sign Up</a></li>
             </ul>
         </nav>
     </header>
@@ -23,8 +23,8 @@
         <section class="search-section">
             <h1>Every Film, Every Genre, One Search</h1>
             <form id="search-form">
-                <input type="text" id="search-input" placeholder="Search for movies...">
-                <button id="search-button" type="submit">Search</button>
+                <input type="text" id="search-input" placeholder="Search for movies..." aria-label="Search for a film">
+                <button id="search-button" type="submit" aria-label="Search for films">Search</button>
             </form>
         </section>
         <!-- Trending section - popular films grid and year filter -->
@@ -121,10 +121,14 @@
                     <label for="review-email">Email:</label>
                     <input type="email" id="review-email" name="email" required>
                 </div>
-                <button class="review-submit" type="submit">Submit rating</button>
+                <button class="review-submit" type="submit" aria-label="Submit rating">Submit rating</button>
             </form>
         </section>
     </main>
+        <footer>
+            <p>&copy; 2026 CineSearch — All rights reserved</p>
+            <p>Powered by <a href="https://www.omdbapi.com" target="_blank">OMDb API</a></p>
+        </footer>
     <script src="index.js"></script>
 </body>
 </html>

@@ -1,8 +1,10 @@
+/* Global reset */
 * {
     box-sizing: border-box;
     max-width: 100%;
 }
 
+/* Logo styling */
 .logo {
     font-family: sans-serif;
     font-size: 40px;
@@ -14,6 +16,7 @@
     border-radius: 5px;
 }
 
+/* Header and navigation*/
 .logo span {
     color: #ffffff;
 }
@@ -55,6 +58,7 @@ nav a:hover {
     color: #f33535;
 }
 
+/* Search section */
 .search-section {
     text-align: center;
     padding: 50px 20px;
@@ -88,6 +92,7 @@ nav a:hover {
     cursor: pointer;
 }
 
+/* Film card grid */
 #trending-movies, #results {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -107,6 +112,7 @@ nav a:hover {
     }
 }
 
+/* Movie card styling */
 .movie-card {
     background-color: #ffffff;
     border-radius: 8px;
@@ -130,6 +136,7 @@ nav a:hover {
     padding: 0 8px 8px;
 }
 
+/* Form styling */
 .sign-up {
     max-width: 500px;
     margin: 0 auto;
@@ -156,7 +163,7 @@ nav a:hover {
 }
 
 .review-form label {
-    display: block;
+    display: inline;
     margin-bottom: 5px;
     margin-top: 10px;
 }
@@ -197,6 +204,13 @@ input[type="checkbox"] + label {
     display: none;
 }
 
+.rating-input{
+    accent-color: #f33535;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+/* Mobile responsive */
 @media (max-width: 600px) {
     header {
         flex-direction: column;
@@ -231,9 +245,19 @@ input[type="checkbox"] + label {
     }
 }
 
-.rating-input{
-    display: block;
-    accent-color: #f33535;
-    cursor: pointer;
-    margin-right: 5px;
+footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #f33535;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
