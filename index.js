@@ -37,7 +37,7 @@ function addElements(movies) {
                 <p>Type: ${movie.Type}</p>
                 <p>Year: ${movie.Year}</p>
                 <img src="${movie.Poster}" alt="${movie.Title} Poster">
-                <button onclick="fetchMovieDetails('${movie.imdbID}' aria-label="View details for ${movie.Title}")">View Details</button>
+                <button onclick="fetchMovieDetails('${movie.imdbID}')">View Details</button>
             `;
             document.getElementById("results").appendChild(card);
         })
@@ -70,7 +70,7 @@ function fetchMovieDetails(imdbID){
                 <p><Strong>Genre:</Strong> ${data.Genre}</p>
                 <p><Strong>Rating:</Strong> ${data.imdbRating}</p>
                 <img src="${data.Poster}" alt="${data.Title} Poster">
-                <button onclick="goBack()>Go Back</button>
+                <button onclick="goBack()" aria-label="Go back to search results">Go Back</button>
                 
             `;
         })
