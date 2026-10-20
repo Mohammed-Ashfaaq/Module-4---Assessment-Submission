@@ -70,7 +70,7 @@ function fetchMovieDetails(imdbID){
                 <p><Strong>Genre:</Strong> ${data.Genre}</p>
                 <p><Strong>Rating:</Strong> ${data.imdbRating}</p>
                 <img src="${data.Poster}" alt="${data.Title} Poster">
-                <button onclick="goBack() aria-label="Go back to search results">Go Back</button>
+                <button onclick="goBack()>Go Back</button>
                 
             `;
         })
