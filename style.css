@@ -194,6 +194,11 @@ input[type="checkbox"] + label {
     display: inline;
 }
 
+.review-label {
+    display: block !important;
+    padding-top: 10px;
+}
+
 .checkbox-group {
     display: block;
     margin-top: 15px;
